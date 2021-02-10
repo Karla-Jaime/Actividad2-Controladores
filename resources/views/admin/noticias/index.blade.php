@@ -6,6 +6,31 @@
     <title>Lista de noticias</title>
 </head>
 <body>
-    <h1>Lista de Noticias</h1>
+    <h1>Lista de noticias: </h1>
+    
+    @if(Session::has("exito"))
+        <p style="color: #0e7a0e">{{Session::get("exito")}}</p>
+    @endif
+    @if(Session::has("error"))
+        <p style="color: #a11919a1">{{Session::get("error")}}</p>
+    @endif
+    <a href="{{ route("admin.noticias.create") }}">Crear nueva noticia</a>
+    <table>
+        <thead>
+            <th>Título</th>
+            <th>acciones</th>
+        </thead>
+        <tbody>
+            @foreach($noticias as $noticia)
+                <tr>
+                    <td>{{$noticia->titulo}}</td>
+                    <td>
+                        <a href="{{ route("admin.noticias.edit", $noticia->id)}}">Editar</a>
+                        <a href="#">Eliminar</a>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>
