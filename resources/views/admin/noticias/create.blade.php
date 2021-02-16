@@ -1,33 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear nueva noticia</title>
-</head>
-<body>
 
-<a href="{{ route("admin.noticias.index") }}">Volver a lista de noticias</a>
+@extends('layouts.admin')
+@section('contenido_principal')
 
-    <h1>Crear nueva noticia</h1>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Crear noticia</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Noticias</a></li>
+              <li class="breadcrumb-item active">Lista de noticias</li>
+             
+            </ol>
+          </div>
+          <div>  <a href="{{ route("admin.noticias.index") }}">Volver a lista de noticias</a></div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+ 
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Lista de noticias</h3>
 
-    <form method="POST" action="{{ route("admin.noticias.store") }}">
+          
+        </div>
+        <div class="card-body">
+        <form method="POST" action="{{ route("admin.noticias.store") }}">
         @csrf
 
+        <div class="form-group">
         <label>Título:</label>
-        <input name="titulo" type="text">
+        <input  class =" form-control" name="titulo" type="text">
+        </div>
+        <div class="form-group">
         <label>Fecha:</label>
-        <input name="fecha" type="date">
+        <input class =" form-control" name="fecha" type="date">
+        </div>
+        <div class="form-group">
         <label>Autor:</label>
-        <input name="autor" type="text">
+        <input class =" form-control" name="autor" type="text">
+        </div>
+        <div class="form-group">
         <label>Cuerpo:</label>
-        <textarea rows="5" name="cuerpo"></textarea>
+        <textarea class =" form-control"  rows="5" name="cuerpo"></textarea>
+        </div>
+        <div class="form-group">
         <label>Foto:</label>
-        <input name="foto" type="text">
-        <button type="submit">Agregar una nueva noticia</button>
-
+        <input class =" form-control"  name="foto" type="text">
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary">Agregar una nueva noticia</button>
+        </div>
     </form>
+        
+       
+    </table>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          Pie de la tabla de lista de noticias
+        </div>
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
 
-</body>
-</html>
+    </section>
+
+
+
+
+   
+    @endsection

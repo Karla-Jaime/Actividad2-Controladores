@@ -26,4 +26,6 @@ class NoticiaController extends Controller
 
         return view('noticias.detalles', $argumentos);
     }
+
+    
 }

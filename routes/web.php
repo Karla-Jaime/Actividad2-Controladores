@@ -42,3 +42,5 @@ Route::put("/admin/noticias/{id}", [AdminNoticiaController::class, "update"])->n
 Route::get("/admin/noticias/{id}/confirmedelete",[AdminNoticiaController::class, "confirmdelete"])->name("admin.noticias.confirmdelete");
 Route::delete("/admin/noticias/{id}",[AdminNoticiaController::class, "destroy"])->name("admin.noticias.destroy");
 Route::get("/admin/noticias/{id}", [AdminNoticiaController::class, "show"])->name("admin.noticias.show");
+
+Route::get("/admin/blank", [AdminNoticiaController::class, "blank"])->name("admin.noticias.blank");

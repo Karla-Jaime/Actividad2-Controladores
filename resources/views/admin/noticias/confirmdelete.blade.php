@@ -15,7 +15,7 @@
     <p>¿Está seguro de que desea eliminar la noticia: {{ $noticia->titulo }}?</p>
     
     @csrf
-    <form method="POST" action="{{ route("admin.noticias.destroy"), $noticia ->id}} ">
+    <form method="POST" action="{{ route(" admin.noticias.destroy"), $noticia ->id}} ">
     @method("delete")
     <a href="{{ route("admin.noticias.index") }} "><button type="button">Cancelar</button></a>
     <button type="submit">Confirmar</button>
