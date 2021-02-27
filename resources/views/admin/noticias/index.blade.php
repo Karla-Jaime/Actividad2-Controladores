@@ -53,7 +53,32 @@
                     <td>
                         <a href="{{ route("admin.noticias.show", $noticia->id) }}"> <button class="btn btn-xs btn-primary">Ver</button></a>
                         <a href="{{ route("admin.noticias.edit", $noticia->id) }}"> <button class="btn btn-xs btn-success">Editar</button></a>
-                        <a href="{{ route("admin.noticias.confirmdelete", $noticia->id) }}"> <button class="btn btn-xs btn-danger"> Eliminar</button></a>
+                         <!--  <a href="{{ route("admin.noticias.confirmdelete", $noticia->id) }}"> <button class="btn btn-xs btn-danger"> Eliminar</button></a> -->
+                         <button class="btn btn-xs btn-danger" type="button" data-toggle="modal" data-target="#confirmarEliminacion{{$noticia->id}}"> Eliminar</button></a>
+                        <!-- Modal -->
+                      <div class="modal fade" id="confirmarEliminacion{{$noticia->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <h5 class="modal-title text-left" id="exampleModalLabel">Confirmación de eliminación de noticia: {{$noticia->id}}</h5>
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                            <p>¿Está seguro de eliminar la noticia: "{{$noticia->titulo}}?"</p>
+                            </div>
+                              <div class="modal-footer" action="{{ route("admin.noticias.destroy", $noticia->id) }}">
+                                <form method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </td>
                 </tr>
             @endforeach

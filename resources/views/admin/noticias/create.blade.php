@@ -12,7 +12,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Noticias</a></li>
-              <li class="breadcrumb-item active">Lista de noticias</li>
+              <li class="breadcrumb-item active">Crear noticia</li>
              
             </ol>
           </div>
