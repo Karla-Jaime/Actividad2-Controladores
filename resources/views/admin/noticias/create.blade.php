@@ -18,7 +18,6 @@
           </div>
           <div>  <a href="{{ route("admin.noticias.index") }}">Volver a lista de noticias</a></div>
         </div>
-      </div><!-- /.container-fluid -->
     </section>
  
     <!-- Default box -->
