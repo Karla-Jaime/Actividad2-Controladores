@@ -18,8 +18,7 @@
           @endif
           <p>{{ $noticia->cuerpo}}</p>   
         @else
-        <h1>Lo sentimos, no se encontro la noticia que buscas</h1>
-        
+        <h1>Lo sentimos, no se encontro la noticia que buscas</h1>        
         @endif
 </body>
 </html>
